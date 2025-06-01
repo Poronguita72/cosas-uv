@@ -1,0 +1,32 @@
+
+
+def leer_numeros_enteros() ->int:
+    num_valido = False
+    while num_valido:
+        entrada = input("ingrese valor mayor que cero: ")
+        try:
+            numero_a_revisar = int(entrada)
+        
+            if numero_a_revisar > 0:
+                num_valido = True
+            else:
+                print("entrada no válida")
+        except:
+            print("entrada no válida")
+    return numero_a_revisar
+    
+numero = leer_numeros_enteros()
+print(f"el numero ingresado es {numero}")
+
+
+
+def scomponer_numero(numero_entrada:int):
+    numero_actual = numero_entrada
+    
+    while numero_atual: > 0:
+        digito = numero_actual % 10
+        numero_actual = numero_actual = // 10
+        
+        print(digito)
+        
+nume 

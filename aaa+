@@ -1,0 +1,20 @@
+def revisar_digitos(numero: int):
+    
+    numero_actual = numero
+    suma_total = 0
+    while numero_actual > 0:
+        digito_actual = numero_actual % 10
+        print("digito= ", digito_actual)
+        suma_total = suma_total + digito_actual
+        numero_actual = numero_actual // 10 
+        
+    return suma_total
+        
+        
+        
+        
+nro = 221874
+
+suma_digitos= revisar_digitos(nro)
+
+print("la suma es:", suma_digitos)

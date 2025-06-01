@@ -1,0 +1,16 @@
+import pyf
+
+def numeros(numero:int)->int:
+    contador=numero
+    contador=0
+    
+    while contador<10:
+        
+        contador= contador+1
+        print(contador)
+        
+    return contador
+
+numero=input('n°: ')
+numeros(numero)
+1

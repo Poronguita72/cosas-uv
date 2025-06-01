@@ -1,0 +1,56 @@
+
+def validar_num() ->int:
+    numero_valido = None
+    entrada_no_valida = True
+
+    while entrada_no_valida == True: 
+        dato_ingresado = input("ingrese un numero mayor a cero: ")
+        try:
+            numero_ingresado = int(dato_ingresado)    
+        except:
+            print("no puede ingresar un string")
+            continue
+        if numero_ingresado > 0:
+            numero_valido = numero_ingresado
+            entrada_no_valida = False
+    
+    
+    return numero_valido
+
+
+def examinar_numeros(numero_valido:int):
+    
+    numero_actual = numero_valido
+    total_leds = 0
+    while numero_actual > 0: 
+        digito_actual = numero_actual %10
+        print("digito actual=", digito_actual)
+        
+        numero_actual = numero_actual // 10
+    return total_leds
+    
+
+def centidad_leds(digito:int)->int:
+    cantidad = None
+    
+    if digito ==0 or digito == 6 or digito == 9:
+        cantidad = 6
+    elif digito == 1:
+        cantidad = 1
+    elif digito == 2 or digito == 3 or digito == 5:
+        cantidad = 5
+    elif digito == 4:
+        cantidad = 4
+    elif digito == 7:
+        cantidad = 3
+    elif digito == 8:
+        cantidad = 7
+    
+    return cantidad
+
+
+nro = validar_num()
+print(nro)
+
+examinar_numeros (nro)
+total_leds_usados = examinar_numeros(nro)

@@ -1,0 +1,33 @@
+
+#retorna True si el válido, y false si es falso 
+def validar_simetria(nro_a_validar) ->bool:
+    numero_actual = nro_a_validar
+    contador_de_digitos = 0
+    primer_digito = None
+    ultimo_digito = None
+    
+    
+    while numero_actual > 0:
+        digito_actual = numero_actual % 10
+        
+        contador_de_digitos = contador_de_digitos + 1
+        
+        if contador_de_digitos == 1:
+            primer_digito = digito_actual
+            
+        numero_actual = numero_actual // 10
+        
+        ultimo_digito = digito_actual
+        
+        
+        if primer_digito == ultimo_digito:
+            return True
+        else:
+            return False
+        
+    print("primer digito = ", primer_digito)
+    print("ultimo_digito = ", ultimo_digito)
+    
+    
+nro = 9123456789
+validar_simetria(nro)

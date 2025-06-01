@@ -1,0 +1,69 @@
+def validar_numero()->int:
+
+ #variables
+    numero_valido = None
+    entrada_no_valida = True
+
+  # si la entrada no es valida se inicia el ciclo while
+    while entrada_no_valida == True:
+        dato_ingresado = input("ingrese un numero: ")
+        #se ingresa un dato de tipo int
+        try:
+            numero_ingresado = int(dato_ingresado)
+        except: #si no es int va a salir el print de abajo
+            print("tipo de dato no valido")
+            continue
+            
+
+        # si se ingresa un numero mayor a 0 se sale del ciclo, pero si no se vuelve a entrar con un print
+        if numero_ingresado > 0:
+
+            numero_valido = numero_ingresado
+            entrada_no_valida = False
+        else:
+            print("tiene que ingresar un valor mayor a 0")
+    return numero_valido
+
+
+
+
+def examinar_numero(numero_valido: int)-> int:
+    numero_actual = numero_valido
+
+    total_leds = 0
+
+
+    while numero_actual > 0:
+        digito_actual = numero_actual % 10
+        leds = cantidad_leds(digito_actual)
+        print("digito actual = ", digito_actual, "cantidad de leds", leds)
+        total_leds = total_leds + leds
+
+        numero_actual = numero_actual // 10
+    
+    return total_leds
+
+
+def cantidad_leds(digito:int) -> int:
+
+
+    cantidad = None
+
+    if digito == 0 or digito == 6 or digito == 9:
+        cantidad = 6
+    elif digito == 1:
+        cantidad = 2
+    elif digito == 2 or digito == 3 or digito == 5:
+        cantidad = 5
+    elif digito == 4:
+        cantidad = 4
+    elif digito == 7:
+        cantidad = 3
+    elif digito == 8:
+        cantidad = 7
+
+    return cantidad
+
+nro = validar_numero()
+total_leds_usados = examinar_numero(nro)
+print(f"el numero {nro} ultiliza {total_leds_usados} leds")

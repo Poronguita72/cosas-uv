@@ -1,0 +1,16 @@
+nombre = ""
+#mientras nombre sea distinto de salir
+while nombre != "salir":
+    nombre = input("ingrese su nombre:" )
+    if nombre != "salir":
+        print(f"!hola {nombre}")
+
+
+seguir = True
+
+while seguir:
+    nombre = input("ingrese su nombre: " )
+    if nombre == "salir":
+        seguir = False
+    else:
+        print(f"!hola {nombre}")
